@@ -2,6 +2,9 @@
 
 namespace api_gerenciador_de_atividades.Data.Dtos;
 
+/// <summary>
+/// Classe responsável por criar uma atividade utilizando um DTO.
+/// </summary>
 public class CriarAtividadeDto
 {
     [Required(ErrorMessage = "O nome da atividade é obrigatório!")]
