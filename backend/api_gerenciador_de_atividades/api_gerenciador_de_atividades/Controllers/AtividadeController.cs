@@ -55,4 +55,17 @@ public class AtividadeController : ControllerBase
         return NotFound();
     }
 
+    [HttpPut("{id}")]
+    public IActionResult AtualizaAtividade(int id, [FromBody] AtualizarAtividadeDto atividadeDto)
+    {
+        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
+        if (atividade == null)
+        {
+            return NotFound();
+        }
+        _mapper.Map(atividadeDto, atividade);
+        _contexto.SaveChanges();
+        return NoContent();
+    }
+
 }
