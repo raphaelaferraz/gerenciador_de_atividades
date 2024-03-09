@@ -25,14 +25,8 @@ public class AtividadeService
         return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
 
-    public async Task<LeituraAtividadeDto> AddAtividade(CriarAtividadeDto atividadeDto)
+    public async Task<LeituraAtividadeDto> AddAtividade(Atividade atividade)
     {
-        var atividade = new Atividade
-        {
-            Nome = atividadeDto.Nome,
-            Descricao = atividadeDto.Descricao,
-            Concluida = atividadeDto.Concluida
-        };
         await _atividadeDao.AddAtividade(atividade);
         return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
     }

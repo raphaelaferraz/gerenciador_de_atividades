@@ -1,6 +1,7 @@
 ﻿using api_gerenciador_de_atividades.Data;
 using api_gerenciador_de_atividades.Data.Dtos;
 using api_gerenciador_de_atividades.Models;
+using api_gerenciador_de_atividades.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +10,13 @@ namespace api_gerenciador_de_atividades.Controllers;
 [ApiController]
 public class AtividadeController : ControllerBase
 {
-    private AtividadeContext _contexto;
+    private AtividadeService _atividadeService;
 
     private IMapper _mapper;
 
-    public AtividadeController(AtividadeContext contexto, IMapper mapper)
+    public AtividadeController(IMapper mapper, AtividadeService atividadeService)
     {
-        _contexto = contexto;
+        _atividadeService = atividadeService;
         _mapper = mapper;
     }
 
@@ -23,19 +24,18 @@ public class AtividadeController : ControllerBase
     public IActionResult AdicionaAtividade([FromBody] CriarAtividadeDto atividadeDto)
     {
         Atividade atividade = _mapper.Map<Atividade>(atividadeDto);
-        _contexto.Atividades.Add(atividade);
-        _contexto.SaveChanges();
+        _atividadeService.AddAtividade(atividade);
         return CreatedAtAction(nameof(RecuperaAtividadesPorId), new { id = atividade.Id }, atividade);
     }
 
     [HttpGet]
-    public IActionResult RecuperaAtividades()
+    public async Task<IActionResult> RecuperaAtividadesAsync()
     {
-        List<Atividade> atividades = _contexto.Atividades.ToList();
+        IEnumerable<LeituraAtividadeDto> atividades = await _atividadeService.GetAtividades();
         
-        if (atividades.Count == 0)
+        if (atividades == null)
         {
-            return NoContent();
+            return NotFound();
         }
 
         List<LeituraAtividadeDto> atividadesDto = _mapper.Map<List<LeituraAtividadeDto>>(atividades);
@@ -44,40 +44,35 @@ public class AtividadeController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IActionResult RecuperaAtividadesPorId(int id)
+    public async Task<IActionResult> RecuperaAtividadesPorId(int id)
     {
-        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
-        if (atividade != null)
+        LeituraAtividadeDto atividadeDto = await _atividadeService.GetAtividadeById(id);
+        if (atividadeDto != null)
         {
-            LeituraAtividadeDto atividadeDto = _mapper.Map<LeituraAtividadeDto>(atividade);
             return Ok(atividadeDto);
         }
         return NotFound();
     }
 
     [HttpPut("{id}")]
-    public IActionResult AtualizaAtividade(int id, [FromBody] AtualizarAtividadeDto atividadeDto)
+    public async Task<IActionResult> AtualizaAtividade(int id, [FromBody] AtualizarAtividadeDto atividadeDto)
     {
-        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
+        LeituraAtividadeDto atividade = await _atividadeService.AtualizaAtividade(id, atividadeDto);
         if (atividade == null)
         {
             return NotFound();
         }
-        _mapper.Map(atividadeDto, atividade);
-        _contexto.SaveChanges();
         return Ok(atividade);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeletaAtividade(int id)
+    public async Task<IActionResult> DeletaAtividade(int id)
     {
-        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
+        LeituraAtividadeDto atividade = await _atividadeService.DeletaAtividade(id);
         if (atividade == null)
         {
             return NotFound();
         }
-        _contexto.Remove(atividade);
-        _contexto.SaveChanges();
         return Ok(atividade);
     }
 }
