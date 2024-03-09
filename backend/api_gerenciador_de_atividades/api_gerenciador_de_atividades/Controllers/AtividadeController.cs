@@ -19,13 +19,19 @@ public class AtividadeController : ControllerBase
     {
         _contexto.Atividades.Add(atividade);
         _contexto.SaveChanges();
-        return CreatedAtAction(nameof(RecuperaAtividadesPorId), new { id = atividade.Id }, atividade);
+        return CreatedAtAction(nameof(RecuperaAtividadesPorId), new { nome = atividade.Nome }, atividade);
+    }
+
+    [HttpGet]
+    public IEnumerable<Atividade> RecuperaAtividades()
+    {
+        return _contexto.Atividades;
     }
 
     [HttpGet("{id}")]
-    private IActionResult RecuperaAtividadesPorId(int id)
+    public IActionResult RecuperaAtividadesPorId(int id)
     {
-        Atividade atividade = _contexto.Atividades.Find(id);
+        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
         if (atividade != null)
         {
             return Ok(atividade);
