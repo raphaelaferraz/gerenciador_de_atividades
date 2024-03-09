@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 // Conexão com o banco de dados
-string stringDeConexao = builder.Configuration.GetConnectionString("TarefaConexao");
+string stringDeConexao = builder.Configuration.GetConnectionString("AtividadeConexao");
 
 // Adiciona o serviço de banco de dados
 builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.UseLazyLoadingProxies().UseNpgsql(stringDeConexao));
