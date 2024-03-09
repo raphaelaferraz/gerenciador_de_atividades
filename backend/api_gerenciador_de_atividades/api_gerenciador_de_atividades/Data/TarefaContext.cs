@@ -11,3 +11,4 @@ public class TarefaContext : DbContext
 
     public DbSet<Tarefa> Tarefas { get; set; }
 }
+

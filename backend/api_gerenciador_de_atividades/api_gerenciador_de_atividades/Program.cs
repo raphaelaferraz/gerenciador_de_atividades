@@ -1,3 +1,6 @@
+using api_gerenciador_de_atividades.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+// Conexão com o banco de dados
+string stringDeConexao = builder.Configuration.GetConnectionString("TarefaConexao");
+
+// Adiciona o serviço de banco de dados
+builder.Services.AddDbContext<TarefaContext>(configuracoes => configuracoes.UseLazyLoadingProxies().UseNpgsql(stringDeConexao));
+
+// Adiciona das configurações do CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
