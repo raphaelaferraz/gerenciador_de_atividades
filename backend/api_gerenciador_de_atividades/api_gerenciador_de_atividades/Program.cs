@@ -26,6 +26,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Adiciona o serviço de mapeamento de objetos
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Uols/u7mjrxVJkHXvJAUAzEvon/CPh+XV9rFz2R7x6+ymDhu4bs6x9EY1nWBZcm7ej+mKWL7vkW22ETQLkt3Pw==",
+  "dgSpecHash": "IaQy+A33yHI6VkI2MUiK1LmDDM7gJuT1shUMLwaPskOXbq2c//LIMbLbYhK1G1lywaBod48SXtXWm5MnVKt6mQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Inteli\\Documents\\mod5\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Inteli\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Inteli\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Inteli\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Inteli\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
