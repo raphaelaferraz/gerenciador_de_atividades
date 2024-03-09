@@ -54,3 +54,4 @@ C:\Users\Inteli\Documents\mod5\gerenciador_de_atividades\backend\api_gerenciador
 C:\Users\Inteli\Documents\mod5\gerenciador_de_atividades\backend\api_gerenciador_de_atividades\api_gerenciador_de_atividades\obj\Debug\net6.0\api_gerenciador_de_atividades.pdb
 C:\Users\Inteli\Documents\mod5\gerenciador_de_atividades\backend\api_gerenciador_de_atividades\api_gerenciador_de_atividades\obj\Debug\net6.0\api_gerenciador_de_atividades.genruntimeconfig.cache
 C:\Users\Inteli\Documents\mod5\gerenciador_de_atividades\backend\api_gerenciador_de_atividades\api_gerenciador_de_atividades\obj\Debug\net6.0\ref\api_gerenciador_de_atividades.dll
+C:\Users\Inteli\Documents\mod5\gerenciador_de_atividades\backend\api_gerenciador_de_atividades\api_gerenciador_de_atividades\bin\Debug\net6.0\AutoMapper.dll
