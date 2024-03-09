@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wjgqff5tUEw54ON8I/13O2hO3AVM08kjBlu/9TAs7yA=",
+  "Source": "api_gerenciador_de_atividades",
+  "BasePath": "_content/api_gerenciador_de_atividades",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
