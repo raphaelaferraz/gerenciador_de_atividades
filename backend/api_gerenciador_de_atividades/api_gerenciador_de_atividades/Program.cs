@@ -1,4 +1,6 @@
 using api_gerenciador_de_atividades.Data;
+using api_gerenciador_de_atividades.Data.Dao;
+using api_gerenciador_de_atividades.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,10 +23,16 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(builder =>
     {
         builder.AllowAnyOrigin()
-               .AllowAnyMethod()
+        .AllowAnyMethod()
                .AllowAnyHeader();
     });
 });
+
+// Registra o DAO
+builder.Services.AddScoped<AtividadeDao>();
+
+// Registra o Service
+builder.Services.AddScoped<AtividadeService>();
 
 // Adiciona o serviço de mapeamento de objetos
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
