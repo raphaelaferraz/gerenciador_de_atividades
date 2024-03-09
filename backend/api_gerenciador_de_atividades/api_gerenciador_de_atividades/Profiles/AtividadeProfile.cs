@@ -8,5 +8,6 @@ public class AtividadeProfile : Profile
     {
         CreateMap<Data.Dtos.CriarAtividadeDto, Models.Atividade>();
         CreateMap<Models.Atividade, Data.Dtos.LeituraAtividadeDto>();
+        CreateMap<Data.Dtos.AtualizarAtividadeDto, Models.Atividade>();
     }
 }
