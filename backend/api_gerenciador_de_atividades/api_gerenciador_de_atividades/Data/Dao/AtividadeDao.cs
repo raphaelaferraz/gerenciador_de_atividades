@@ -28,4 +28,19 @@ public class AtividadeDao
         await _context.SaveChangesAsync();
         return atividade;
     }
+
+    public async Task<Atividade> AtualizaAtividade(Atividade atividade)
+    {
+        _context.Atividades.Update(atividade);
+        await _context.SaveChangesAsync();
+        return atividade;
+    }
+
+    public async Task<Atividade> DeletaAtividade(int id)
+    {
+        var atividade = await GetAtividadeById(id);
+        _context.Atividades.Remove(atividade);
+        await _context.SaveChangesAsync();
+        return atividade;
+    }
 }

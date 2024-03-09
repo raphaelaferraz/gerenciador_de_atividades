@@ -36,4 +36,20 @@ public class AtividadeService
         await _atividadeDao.AddAtividade(atividade);
         return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
+
+    public async Task<LeituraAtividadeDto> AtualizaAtividade(int id, AtualizarAtividadeDto atividadeDto)
+    {
+        var atividade = await _atividadeDao.GetAtividadeById(id);
+        atividade.Nome = atividadeDto.Nome;
+        atividade.Descricao = atividadeDto.Descricao;
+        atividade.Concluida = atividadeDto.Concluida;
+        await _atividadeDao.AtualizaAtividade(atividade);
+        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+    }
+
+    public async Task<LeituraAtividadeDto> DeletaAtividade(int id)
+    {
+        var atividade = await _atividadeDao.DeletaAtividade(id);
+        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+    }
 }
