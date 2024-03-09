@@ -2,6 +2,9 @@
 
 namespace api_gerenciador_de_atividades.Profiles;
 
+/// <summary>
+/// Classe responsável por mapear os objetos da classe Atividade.
+/// </summary>
 public class AtividadeProfile : Profile
 {
     public AtividadeProfile()
