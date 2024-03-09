@@ -68,4 +68,16 @@ public class AtividadeController : ControllerBase
         return NoContent();
     }
 
+    [HttpDelete("{id}")]
+    public IActionResult DeletaAtividade(int id)
+    {
+        Atividade atividade = _contexto.Atividades.FirstOrDefault(atividade => atividade.Id == id);
+        if (atividade == null)
+        {
+            return NotFound();
+        }
+        _contexto.Remove(atividade);
+        _contexto.SaveChanges();
+        return NoContent();
+    }
 }
