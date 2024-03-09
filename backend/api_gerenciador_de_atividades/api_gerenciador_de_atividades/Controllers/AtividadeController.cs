@@ -65,7 +65,7 @@ public class AtividadeController : ControllerBase
         }
         _mapper.Map(atividadeDto, atividade);
         _contexto.SaveChanges();
-        return NoContent();
+        return Ok(atividade);
     }
 
     [HttpDelete("{id}")]
@@ -78,6 +78,6 @@ public class AtividadeController : ControllerBase
         }
         _contexto.Remove(atividade);
         _contexto.SaveChanges();
-        return NoContent();
+        return Ok(atividade);
     }
 }
