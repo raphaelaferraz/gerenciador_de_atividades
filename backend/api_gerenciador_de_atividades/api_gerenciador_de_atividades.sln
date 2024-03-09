@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_gerenciador_de_atividades", "api_gerenciador_de_atividades\api_gerenciador_de_atividades.csproj", "{95163136-6880-4C8E-847B-F3F60921E937}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95163136-6880-4C8E-847B-F3F60921E937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95163136-6880-4C8E-847B-F3F60921E937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95163136-6880-4C8E-847B-F3F60921E937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95163136-6880-4C8E-847B-F3F60921E937}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67A17CA8-F199-414D-9A75-71524B87187D}
+	EndGlobalSection
+EndGlobal
