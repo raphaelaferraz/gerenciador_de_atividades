@@ -1,4 +1,7 @@
-﻿namespace api_gerenciador_de_atividades.Data;
+﻿using api_gerenciador_de_atividades.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace api_gerenciador_de_atividades.Data;
 
 public class TarefaContext : DbContext
 {
@@ -7,6 +10,4 @@ public class TarefaContext : DbContext
     }
 
     public DbSet<Tarefa> Tarefas { get; set; }
-}
-{
 }
