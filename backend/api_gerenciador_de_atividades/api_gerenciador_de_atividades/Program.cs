@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 string stringDeConexao = builder.Configuration.GetConnectionString("TarefaConexao");
 
 // Adiciona o serviço de banco de dados
-builder.Services.AddDbContext<TarefaContext>(configuracoes => configuracoes.UseLazyLoadingProxies().UseNpgsql(stringDeConexao));
+builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.UseLazyLoadingProxies().UseNpgsql(stringDeConexao));
 
 // Adiciona das configurações do CORS
 builder.Services.AddCors(options =>

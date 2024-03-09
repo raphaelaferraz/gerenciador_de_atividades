@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api_gerenciador_de_atividades.Data;
 
-public class TarefaContext : DbContext
+public class AtividadeContext : DbContext
 {
-    public TarefaContext(DbContextOptions<TarefaContext> options) : base(options)
+    public AtividadeContext(DbContextOptions<AtividadeContext> options) : base(options)
     {
     }
 
-    public DbSet<Tarefa> Tarefas { get; set; }
+    public DbSet<Atividade> Atividades { get; set; }
 }
 
