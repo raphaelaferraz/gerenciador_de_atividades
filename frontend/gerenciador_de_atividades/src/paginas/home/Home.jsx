@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Atividade from '../../componentes/atividade/atividade';
+import styled from './Home.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
@@ -32,6 +34,12 @@ export default function Home() {
   return (
     <div>
       <h1>Gerenciador de Atividades</h1>
+      <div className={styled.botao}>
+        <Link 
+          to="/cadastrar"
+          className={styled.link}
+          >Cadastrar Atividade</Link>
+      </div>
       {atividade.map((atividade) => (
         <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
       ))}
