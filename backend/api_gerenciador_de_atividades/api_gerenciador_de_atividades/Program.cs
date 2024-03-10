@@ -22,10 +22,13 @@ builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.U
 // Adiciona das configurações do CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAnyOrigin", policy =>
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader());
+    options.AddPolicy(name: "AllowSpecificOrigin",
+                      policy =>
+                      {
+                          policy.WithOrigins("http://35.175.150.222:5173")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
 });
 
 
