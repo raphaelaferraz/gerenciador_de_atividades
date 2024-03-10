@@ -1,6 +1,7 @@
 import styles from './atividade.module.css';
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Atividade({ id, nomeAtividade, descricao, status }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -26,9 +27,9 @@ export default function Atividade({ id, nomeAtividade, descricao, status }) {
         <p className={styles.descricao}>{descricao}</p>
         <p className={styles.status}>Status da atividade: {status}</p>
         <div className={styles.botoes}>
-          <button className={styles.botaoEditar}>
+          <Link to="/editar" className={styles.botaoEditar}>
             <AiFillEdit />Editar atividade
-          </button>
+          </Link>
           <button className={styles.botaoExcluir} onClick={togglePopup}>
             <AiFillDelete /> Excluir atividade
           </button>
