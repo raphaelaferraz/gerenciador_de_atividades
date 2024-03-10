@@ -26,7 +26,7 @@ public class AtividadeService
     public async Task<IEnumerable<LeituraAtividadeDto>> GetAtividades()
     {
         var atividades = await _atividadeDao.GetAtividades();
-        return atividades.Select(atividade => new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida));
+        return atividades.Select(atividade => new LeituraAtividadeDto(atividade.Id, atividade.Nome, atividade.Descricao, atividade.Concluida));
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class AtividadeService
     public async Task<LeituraAtividadeDto> GetAtividadeById(int id)
     {
         var atividade = await _atividadeDao.GetAtividadeById(id);
-        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+        return new LeituraAtividadeDto(atividade.Id, atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public class AtividadeService
     public async Task<LeituraAtividadeDto> AddAtividade(Atividade atividade)
     {
         await _atividadeDao.AddAtividade(atividade);
-        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+        return new LeituraAtividadeDto(atividade.Id, atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class AtividadeService
         atividade.Descricao = atividadeDto.Descricao;
         atividade.Concluida = atividadeDto.Concluida;
         await _atividadeDao.AtualizaAtividade(atividade);
-        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+        return new LeituraAtividadeDto(atividade.Id, atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
 
     /// <summary>
@@ -83,6 +83,6 @@ public class AtividadeService
     public async Task<LeituraAtividadeDto> DeletaAtividade(int id)
     {
         var atividade = await _atividadeDao.DeletaAtividade(id);
-        return new LeituraAtividadeDto(atividade.Nome, atividade.Descricao, atividade.Concluida);
+        return new LeituraAtividadeDto(atividade.Id, atividade.Nome, atividade.Descricao, atividade.Concluida);
     }
 }
