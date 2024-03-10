@@ -4,6 +4,9 @@ export default function Cadastrar() {
   
 
   return (
-    <Formulario />
+    <>
+      <a href="/">Voltar</a>
+      <Formulario />
+    </>
   )
 }
