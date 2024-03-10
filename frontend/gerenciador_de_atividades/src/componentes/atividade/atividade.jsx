@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 
 export default function Atividade({ id, nomeAtividade, descricao, status }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
+
   
   const togglePopup = () => setIsPopupOpen(!isPopupOpen);
 
   const deleteAtividade = async () => {
-    const res = await fetch(`http://localhost:5125/atividade/${id}`, {
+    const res = await fetch(`${apiUrl}/${id}`, {
       method: 'DELETE',
     });
 
@@ -27,9 +29,6 @@ export default function Atividade({ id, nomeAtividade, descricao, status }) {
         <p className={styles.descricao}>{descricao}</p>
         <p className={styles.status}>Status da atividade: {status}</p>
         <div className={styles.botoes}>
-          <Link to="/editar" className={styles.botaoEditar}>
-            <AiFillEdit />Editar atividade
-          </Link>
           <button className={styles.botaoExcluir} onClick={togglePopup}>
             <AiFillDelete /> Excluir atividade
           </button>

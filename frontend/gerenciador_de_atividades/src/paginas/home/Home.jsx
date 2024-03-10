@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
+
   const [atividade, setAtividade] = useState([]);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function Home() {
   }, []);
 
   const fetchAtividades = async () => {
-    const res = await fetch('http://localhost:5125/atividade');
+    const res = await fetch(`${apiUrl}`);
     const data = await res.json();
     console.log(data);
     return data;

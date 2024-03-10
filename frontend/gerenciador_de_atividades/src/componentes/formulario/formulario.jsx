@@ -9,6 +9,9 @@ export default function Formulario() {
     concluida: false,
   });
 
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
+
+
   const handleChange = (event) => {
     const { name, value, type } = event.target;
 
@@ -27,7 +30,7 @@ export default function Formulario() {
   const enviaDados = async (event) => {
     event.preventDefault();
 
-    const res = await fetch('http://localhost:5125/atividade', {
+    const res = await fetch(`${apiUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
