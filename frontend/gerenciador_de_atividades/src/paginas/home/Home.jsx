@@ -43,7 +43,7 @@ export default function Home() {
 
       <div className={styled.atividades}>
         {atividade.map((atividade) => (
-          <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
+          <Atividade id={atividade.id} key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
         ))}
       </div>
     </div>
