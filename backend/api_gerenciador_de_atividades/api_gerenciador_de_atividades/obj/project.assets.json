@@ -2602,11 +2602,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Inteli\\Documents\\mod5\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
+      "projectUniqueName": "C:\\Users\\Inteli\\Documents\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
       "projectName": "api_gerenciador_de_atividades",
-      "projectPath": "C:\\Users\\Inteli\\Documents\\mod5\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
+      "projectPath": "C:\\Users\\Inteli\\Documents\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
       "packagesPath": "C:\\Users\\Inteli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Inteli\\Documents\\mod5\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\obj\\",
+      "outputPath": "C:\\Users\\Inteli\\Documents\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

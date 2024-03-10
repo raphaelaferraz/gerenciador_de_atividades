@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IaQy+A33yHI6VkI2MUiK1LmDDM7gJuT1shUMLwaPskOXbq2c//LIMbLbYhK1G1lywaBod48SXtXWm5MnVKt6mQ==",
+  "dgSpecHash": "80KqjpU3oarcSefSYASrVoSNJl752gYPNHZ5k9E3uBZeeD4ASq/61Wlj5pPi0961Yx1Kl0uN+G5fuQF0SB8B6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Inteli\\Documents\\mod5\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
+  "projectFilePath": "C:\\Users\\Inteli\\Documents\\gerenciador_de_atividades\\backend\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades\\api_gerenciador_de_atividades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Inteli\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Inteli\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
