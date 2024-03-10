@@ -40,9 +40,12 @@ export default function Home() {
           className={styled.link}
           >Cadastrar Atividade</Link>
       </div>
-      {atividade.map((atividade) => (
-        <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
-      ))}
+
+      <div className={styled.atividades}>
+        {atividade.map((atividade) => (
+          <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
+        ))}
+      </div>
     </div>
   )
 }
