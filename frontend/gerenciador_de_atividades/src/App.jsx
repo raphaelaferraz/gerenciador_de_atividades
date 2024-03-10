@@ -1,13 +1,35 @@
-import { useState } from 'react'
-import './App.css'
-import Atividade from './componentes/atividade/atividade'
+import './App.css';
+import Atividade from './componentes/atividade/atividade';
+import styled from './app.module.css';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [atividade, setAtividade] = useState([]);
+
+  useEffect(() => {
+    const getAtividades = async () => {
+      const atividadesDoServidor = await fetchAtividades();
+      setAtividade(atividadesDoServidor);
+    }
+    getAtividades();
+  }, []);
+
+  const fetchAtividades = async () => {
+    const res = await fetch('http://localhost:5125/atividade');
+    const data = await res.json();
+    console.log(data);
+    return data;
+  }
 
   return (
     <>
-     <Atividade nomeAtividade={"Teste"} descricao={"Esta é uma atividade de teste"}/>
+    <div className={styled.botoes}>
+      <button>
+        Cadastrar Atividade
+      </button>
+    </div>
+     <Atividade nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
     </>
   )
 }
