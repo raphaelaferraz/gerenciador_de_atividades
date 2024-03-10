@@ -22,13 +22,12 @@ builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.U
 // Adiciona das configurações do CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
-    {
-        policyBuilder.WithOrigins("http://35.175.150.222:5173") // Substitua pelo(s) domínio(s) correto(s) se necessário
-                     .AllowAnyMethod()
-                     .AllowAnyHeader();
-    });
+    options.AddPolicy("AllowAnyOrigin", policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
 });
+
 
 // Registra o DAO
 builder.Services.AddScoped<AtividadeDao>();
