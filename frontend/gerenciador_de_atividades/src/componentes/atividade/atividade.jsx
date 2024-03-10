@@ -1,15 +1,21 @@
 import styles from './atividade.module.css';
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
+
+// Componente que renderiza as atividades na página Home
 export default function Atividade({ id, nomeAtividade, descricao, status }) {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const apiUrl = import.meta.env.VITE_APP_API_URL;
-
   
+  // Estado para controlar a abertura do popup
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+  // URL da API
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
+  
+  // Função para abrir e fechar o popup
   const togglePopup = () => setIsPopupOpen(!isPopupOpen);
 
+  // Função para deletar a atividade
   const deleteAtividade = async () => {
     const res = await fetch(`${apiUrl}/${id}`, {
       method: 'DELETE',

@@ -1,17 +1,20 @@
 import styles from './formulario.module.css';
 import { useState } from 'react';
 
+// Componente que renderiza o formulário para cadastrar atividades
 export default function Formulario() {
 
+  // Estado para controlar o formulário
   const [form, setForm] = useState({
     nome: '',
     descricao: '',
     concluida: false,
   });
 
+  // URL da API
   const apiUrl = import.meta.env.VITE_APP_API_URL;
 
-
+  // Função para controlar as mudanças no formulário
   const handleChange = (event) => {
     const { name, value, type } = event.target;
 
@@ -26,7 +29,7 @@ export default function Formulario() {
     }));
   };
 
-
+  // Função para enviar os dados do formulário para a API
   const enviaDados = async (event) => {
     event.preventDefault();
 

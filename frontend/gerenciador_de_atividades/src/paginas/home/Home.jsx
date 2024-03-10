@@ -4,11 +4,14 @@ import styled from './Home.module.css';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-
+  // URL da API
   const apiUrl = import.meta.env.VITE_APP_API_URL;
 
+  // Estado para controlar as atividades
   const [atividade, setAtividade] = useState([]);
 
+
+  // Função para buscar as atividades do servidor
   useEffect(() => {
     const getAtividades = async () => {
       const atividadesDoServidor = await fetchAtividades();
@@ -24,6 +27,7 @@ export default function Home() {
     return data;
   }
 
+  // Função para definir o status da atividade
   const defineStatus = (status) => {
     if (status === true) {
       return 'Concluída';
