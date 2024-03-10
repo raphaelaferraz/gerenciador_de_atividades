@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona a configuração para o Kestrel ouvir em todos os endereços
+// Adiciona a configuraÃ§Ã£o para o Kestrel ouvir em todos os endereÃ§os
 builder.WebHost.UseUrls("http://*:5000", "https://*:5001");
 
 // Add services to the container.
@@ -13,18 +13,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-// Conexão com o banco de dados
+// ConexÃ£o com o banco de dados
 string stringDeConexao = builder.Configuration.GetConnectionString("AtividadeConexao");
 
-// Adiciona o serviço de banco de dados
+// Adiciona o serviÃ§o de banco de dados
 builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.UseNpgsql(stringDeConexao));
 
-// Adiciona das configurações do CORS
+// Adiciona das configuraÃ§Ãµes do CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
     {
-        policyBuilder.WithOrigins("http://localhost:5173") // Substitua pelo(s) domínio(s) correto(s) se necessário
+        policyBuilder.WithOrigins("http://35.175.150.222:5173/") // Substitua pelo(s) domÃ­nio(s) correto(s) se necessÃ¡rio
                      .AllowAnyMethod()
                      .AllowAnyHeader();
     });
@@ -36,7 +36,7 @@ builder.Services.AddScoped<AtividadeDao>();
 // Registra o Service
 builder.Services.AddScoped<AtividadeService>();
 
-// Adiciona o serviço de mapeamento de objetos
+// Adiciona o serviÃ§o de mapeamento de objetos
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddSwaggerGen();
@@ -50,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// UseCors deve ser chamado com o nome da política que você definiu. Eu ajustei para usar "AllowSpecificOrigin" conforme definido acima
+// UseCors deve ser chamado com o nome da polÃ­tica que vocÃª definiu. Eu ajustei para usar "AllowSpecificOrigin" conforme definido acima
 app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
