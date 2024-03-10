@@ -1,6 +1,6 @@
 .atividade {
   background-color: brown;
-  width: 20rem;
+  width: 30rem;
   border-radius: 20px;
   padding: 1rem;
 }
@@ -11,10 +11,29 @@
   text-align: left;
 }
 
+.descricao {
+  text-align: left;
+}
+
 .botaoExcluir {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   background-color: #4d0f0f;
+  border: none;
+}
+
+.botaoEditar {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #4d0f0f;
+  gap: 1rem;
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
