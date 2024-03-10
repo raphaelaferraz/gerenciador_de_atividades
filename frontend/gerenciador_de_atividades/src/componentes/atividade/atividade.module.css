@@ -43,3 +43,20 @@
   text-align: left;
   color: #fdaeae;
 }
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 20px;
+  border: 1px solid black;
+  z-index: 999;
+}
+
+.popupButtons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
