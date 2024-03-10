@@ -20,11 +20,11 @@ builder.Services.AddDbContext<AtividadeContext>(configuracoes => configuracoes.U
 // Adiciona das configurações do CORS
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
+    options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
     {
-        builder.AllowAnyOrigin()
-        .AllowAnyMethod()
-               .AllowAnyHeader();
+        policyBuilder.WithOrigins("http://localhost:5173") // Substitua pelo(s) domínio(s) correto(s) se necessário
+                     .AllowAnyMethod()
+                     .AllowAnyHeader();
     });
 });
 
@@ -48,7 +48,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// UseCors deve ser chamado com o nome da política que você definiu. Eu ajustei para usar "AllowSpecificOrigin" conforme definido acima
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 
