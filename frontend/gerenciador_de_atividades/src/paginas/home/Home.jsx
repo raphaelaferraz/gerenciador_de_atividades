@@ -1,9 +1,7 @@
-import './App.css';
-import Atividade from './componentes/atividade/atividade';
-import styled from './app.module.css';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Atividade from '../../componentes/atividade/atividade';
 
-function App() {
+export default function Home() {
 
   const [atividade, setAtividade] = useState([]);
 
@@ -30,20 +28,13 @@ function App() {
     } 
   }
 
+
   return (
-    <>
-    <div className={styled.botoes}>
-      <a>
-        Cadastrar Atividade
-      </a>
-    </div>
-    {
-      atividade.map((atividade) => (
+    <div>
+      <h1>Gerenciador de Atividades</h1>
+      {atividade.map((atividade) => (
         <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
-      ))
-    }
-    </>
+      ))}
+    </div>
   )
 }
-
-export default App
