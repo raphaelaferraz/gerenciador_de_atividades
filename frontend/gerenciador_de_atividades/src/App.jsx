@@ -33,9 +33,9 @@ function App() {
   return (
     <>
     <div className={styled.botoes}>
-      <button>
+      <a>
         Cadastrar Atividade
-      </button>
+      </a>
     </div>
     {
       atividade.map((atividade) => (
