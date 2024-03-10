@@ -22,6 +22,14 @@ function App() {
     return data;
   }
 
+  const defineStatus = (status) => {
+    if (status === true) {
+      return 'Concluída';
+    } else if (status === false) {
+      return 'Não concluída';
+    } 
+  }
+
   return (
     <>
     <div className={styled.botoes}>
@@ -31,7 +39,7 @@ function App() {
     </div>
     {
       atividade.map((atividade) => (
-        <Atividade key={atividade.nome} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
+        <Atividade key={atividade.id} status={defineStatus(atividade.concluida)} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
       ))
     }
     </>
