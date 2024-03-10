@@ -12,6 +12,6 @@ public class AtividadeContext : DbContext
     {
     }
 
-    public DbSet<Atividade> Atividades { get; set; }
+    public DbSet<Atividade> atividades { get; set; }
 }
 
