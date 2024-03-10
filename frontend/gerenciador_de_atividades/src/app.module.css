@@ -1,5 +1,4 @@
 .botoes {
   display: flex;
-  position: absolute;
-  top: 1rem;
+  margin-bottom: 3rem;
 }

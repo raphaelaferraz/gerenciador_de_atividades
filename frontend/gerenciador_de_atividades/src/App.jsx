@@ -29,7 +29,11 @@ function App() {
         Cadastrar Atividade
       </button>
     </div>
-     <Atividade nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
+    {
+      atividade.map((atividade) => (
+        <Atividade key={atividade.nome} nomeAtividade={atividade.nome} descricao={atividade.descricao}/>
+      ))
+    }
     </>
   )
 }
