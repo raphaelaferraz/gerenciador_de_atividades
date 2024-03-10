@@ -24,7 +24,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
     {
-        policyBuilder.WithOrigins("http://35.175.150.222:5173/") // Substitua pelo(s) domínio(s) correto(s) se necessário
+        policyBuilder.WithOrigins("http://35.175.150.222:5173") // Substitua pelo(s) domínio(s) correto(s) se necessário
                      .AllowAnyMethod()
                      .AllowAnyHeader();
     });
@@ -50,7 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// UseCors deve ser chamado com o nome da política que você definiu. Eu ajustei para usar "AllowSpecificOrigin" conforme definido acima
+app.UseRouting();
+
 app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
