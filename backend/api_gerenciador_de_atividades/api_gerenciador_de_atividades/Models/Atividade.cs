@@ -1,8 +1,13 @@
-﻿namespace api_gerenciador_de_atividades.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace api_gerenciador_de_atividades.Models;
 
 /// <summary>
 /// Classe que representa uma atividade.
 /// </summary>
+
+[Table("Atividades")]
+
 public class Atividade
 {
     public int Id { get; set; }

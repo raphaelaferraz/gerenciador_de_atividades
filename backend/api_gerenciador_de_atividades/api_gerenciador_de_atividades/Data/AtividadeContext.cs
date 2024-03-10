@@ -12,6 +12,11 @@ public class AtividadeContext : DbContext
     {
     }
 
-    public DbSet<Atividade> atividades { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Atividade>().ToTable("Atividades");
+    }
+
+    public DbSet<Atividade> Atividades { get; set; }
 }
 
