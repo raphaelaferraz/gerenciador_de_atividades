@@ -53,6 +53,7 @@ Backend: Possui todos os arquivos da API
 - Models: Possui os modelos de dados
 - Services: Possui os serviços da API
 - Demais pastas (bin, obj, Properties): Pastas padrões do projeto
+  
   Frontend: Possui todos os arquivos do front-end
 - Public: Possui os arquivos públicos do projeto
 - Src: Possui os arquivos do projeto
